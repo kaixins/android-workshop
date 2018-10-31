@@ -1,6 +1,7 @@
 package com.spreys.contactmanager
 
 import android.content.Context
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
@@ -41,6 +42,10 @@ class ContactList : AppCompatActivity() {
 
             holder.itemView.setOnClickListener {
                 //TODO start a new Activity here
+                val intent = Intent(context, ContactDetailsActivity::class.java)
+                intent.putExtra("CONTACT", contact)
+                startActivity(intent)
+
             }
         }
 
